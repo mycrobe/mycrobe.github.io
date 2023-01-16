@@ -11,7 +11,7 @@ export class HelloHeader extends LitElement {
     }
 
     render() {
-        return html`<h1>Hello, ${this.name}!</h1>`;
+        return html`<h1>Hello, ${this.name}!</h1><h3><slot name="subheading">No subheading</slot></h3>`;
     }
 }
 

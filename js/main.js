@@ -6,16 +6,16 @@ const items = [
     'powered by Lit and WebComponents,',
     'with no build step, and',
     'fiddled with in github codespaces.',
-    'Addendum: Everything is rendered in JS so it\'s not ideal.',
+    'only the dynamic part is rendered in lit, the static parts of the page ',
 ]
 
 // Declare a template
 const myTemplate = html`
-<hello-header name="Everybody"></hello-header>
-<p>This is a website:</p>
 <dynamic-list .items=${items}></dynamic-list>
-<p>I could have built this on an iPad. (I didn't, but I <em>could</em> have.)</p>
 `;
 
 // Render the template
-render(myTemplate, document.body);
+render(myTemplate, document.querySelector('#dynamic-part'));
+
+// Clear the style that was hiding any FOUC
+document.body.style = '';
